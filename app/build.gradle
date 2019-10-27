@@ -3,7 +3,7 @@ apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 28
-    buildToolsVersion "29.0.2"
+    buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "com.example.pinclassroom"
         minSdkVersion 17
