@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "252959164291",
+    "firebase_url": "https://pinclassroom-93711.firebaseio.com",
+    "project_id": "pinclassroom-93711",
+    "storage_bucket": "pinclassroom-93711.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:252959164291:android:675c1a8d82d653563a18b6",
+        "android_client_info": {
+          "package_name": "com.example.pinclassroom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "252959164291-gcl89p57oem07lficlpbics0iva22p1t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pinclassroom",
+            "certificate_hash": "2665cac33cf05170716798ada986430cd2ed9787"
+          }
+        },
+        {
+          "client_id": "252959164291-pdbn3a1frerpvt9kap976k2c7klk3vkr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7rkCz3UM_rlRMH1VILwidD5FcE0OK8-M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "252959164291-pdbn3a1frerpvt9kap976k2c7klk3vkr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
