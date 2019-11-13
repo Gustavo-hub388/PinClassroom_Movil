@@ -1,21 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.pinclassroom">
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:debuggable="true"
+        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".ConfigActivity"></activity>
-        <activity android:name=".EventosActivity" />
-        <activity android:name=".DocentesActivity" />
-        <activity android:name=".AulasActivity">
+        android:theme="@style/AppTheme"
+        tools:replace="allowBackup"
+        tools:ignore="HardcodedDebugMode">
 
+        <activity android:name=".LoginActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar"
+            android:exported="true">
         </activity>
-        <activity android:name=".PrincipalActivity">
+
+
+        <activity android:name=".RecoverPasswordActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar">
+        </activity>
+
+
+        <activity android:name=".ConfigActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar"/>
+
+
+        <activity android:name=".EventosActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar"/>
+
+
+        <activity android:name=".DocentesActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar">
+        </activity>
+
+
+        <activity android:name=".AulasActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar"></activity>
+
+
+        <activity android:name=".PrincipalActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
