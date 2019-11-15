@@ -27,6 +27,8 @@ public class PrincipalActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
 
+
+
         builder = new AlertDialog.Builder(this);
         builder.setTitle("¿Quieres cerrar sesión?");
         builder.setMessage("No podras recibir notificaciones al tener tu sesión cerrada");

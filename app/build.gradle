@@ -40,4 +40,7 @@ dependencies {
     implementation 'com.github.medyo:fancybuttons:1.9.1'
     implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation files('libs\\activation.jar')
+    implementation files('libs\\additionnal.jar')
+    implementation files('libs\\mail.jar')
 }

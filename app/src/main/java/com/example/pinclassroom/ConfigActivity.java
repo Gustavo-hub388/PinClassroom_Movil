@@ -18,4 +18,8 @@ public class ConfigActivity extends AppCompatActivity {
         startActivity(new Intent(this, PrincipalActivity.class));
         finish();
     }
+
+    public void IrEnviarSMS(View view) {
+        startActivity(new Intent(this, AyudaMejorarActivity.class));
+    }
 }

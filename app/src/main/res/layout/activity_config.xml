@@ -88,7 +88,7 @@
                 android:layout_below="@+id/txt_nombre"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="15dp"
-                android:text="Gestiona tu información personal"
+                android:text="Gestiona tu información personal."
                 android:textColor="@color/colorSecondaryText" />
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -113,6 +113,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:clickable="true"
+        android:onClick="IrEnviarSMS"
         android:orientation="horizontal">
 
         <ImageView
@@ -147,7 +148,7 @@
                 android:layout_below="@+id/txt_nombre"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="15dp"
-                android:text="Envia un mensaje acerca de agrado o problemas con la App."
+                android:text="Envia un mensaje contandonos de tu experiencia con PinClassroom."
                 android:textColor="@color/colorSecondaryText" />
             <RelativeLayout
                 android:layout_width="match_parent"
