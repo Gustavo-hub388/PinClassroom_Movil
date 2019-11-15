@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import java.util.Properties;
+
 import javax.mail.Authenticator;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -37,14 +38,13 @@ import com.google.firebase.database.ValueEventListener;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 
-public class AyudaMejorarActivity extends AppCompatActivity implements OnClickListener{
+public class AyudaMejorarActivity extends AppCompatActivity implements OnClickListener {
 
     Session session = null;
     ProgressDialog pdialog = null;
     Context context = null;
     EditText reciep, sub, msg;
     String rec, subject, textMessage;
-
 
 
     private FirebaseAuth mAuth;
@@ -77,7 +77,8 @@ public class AyudaMejorarActivity extends AppCompatActivity implements OnClickLi
         subject = user.getEmail();
         textMessage = msg.getText().toString();
 
-        if (TextUtils.isEmpty(msg.getText().toString())) {
+        // elimina los espacios en blanco usando el método trim()
+        if (msg.getText().toString().trim().length() == 0) {
             //Toast.makeText(this, "No es una contraseña válida",Toast.LENGTH_SHORT).show();
             msg.setError("Escribenos tu opinión");
         } else {
@@ -104,25 +105,27 @@ public class AyudaMejorarActivity extends AppCompatActivity implements OnClickLi
 
     public void IrConfigAyuda(View view) {
         startActivity(new Intent(this, ConfigActivity.class));
+        finish();
     }
 
-    private class RetreiveFeedTask extends AsyncTask<String, Void, String>{
+    private class RetreiveFeedTask extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... params) {
-            try{
+            try {
                 Message message = new MimeMessage(session);
                 message.setFrom(new InternetAddress("pinclassroom.2019@gmail.com"));
                 message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(rec));
                 message.setSubject(subject);
                 message.setContent(textMessage, "text/html; charset=utf-8");
                 Transport.send(message);
-            } catch(MessagingException e) {
+            } catch (MessagingException e) {
                 e.printStackTrace();
-            } catch(Exception e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             return null;
         }
+
         @Override
         protected void onPostExecute(String result) {
             pdialog.dismiss();

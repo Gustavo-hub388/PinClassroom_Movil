@@ -22,4 +22,12 @@ public class ConfigActivity extends AppCompatActivity {
     public void IrEnviarSMS(View view) {
         startActivity(new Intent(this, AyudaMejorarActivity.class));
     }
+
+    public void IrEnviarAcercaDe(View view) {
+        startActivity(new Intent(this, AboutActivity.class));
+    }
+
+    public void IrEnviarPerfil(View view) {
+        startActivity(new Intent(this, PerfilUsuarioActivity.class));
+    }
 }

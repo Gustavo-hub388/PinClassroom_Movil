@@ -13,8 +13,14 @@
         android:theme="@style/AppTheme"
         tools:ignore="HardcodedDebugMode"
         tools:replace="allowBackup">
-        <activity android:name=".AyudaMejorarActivity"
-            android:theme="@style/Theme.Design.Light.NoActionBar"></activity>
+        <activity android:name=".PerfilUsuarioActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar"/>
+        <activity
+            android:name=".AboutActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
+        <activity
+            android:name=".AyudaMejorarActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity
             android:name=".LoginActivity"
             android:exported="true"
@@ -27,7 +33,7 @@
         </activity>
         <activity
             android:name=".RecoverPasswordActivity"
-            android:theme="@style/Theme.Design.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity
             android:name=".ConfigActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar" />
@@ -36,15 +42,13 @@
             android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity
             android:name=".DocentesActivity"
-            android:theme="@style/Theme.Design.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity
             android:name=".AulasActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity
             android:name=".PrincipalActivity"
-            android:theme="@style/Theme.Design.Light.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
     </application>
 
 </manifest>
