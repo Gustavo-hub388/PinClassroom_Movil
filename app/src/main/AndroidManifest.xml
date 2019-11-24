@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.pinclassroom">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:debuggable="true"
@@ -13,8 +17,23 @@
         android:theme="@style/AppTheme"
         tools:ignore="HardcodedDebugMode"
         tools:replace="allowBackup">
-        <activity android:name=".PerfilUsuarioActivity"
-            android:theme="@style/Theme.Design.Light.NoActionBar"/>
+        <activity android:name=".Aulas.AulaPerfilActivity"></activity>
+        <activity
+            android:name=".Aulas.AulasWebView"
+            android:label="@string/title_activity_aulas_web_view"
+            android:parentActivityName=".AulasActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.pinclassroom.AulasActivity" />
+        </activity>
+        <activity android:name=".FotoPerfilActivity" />
+        <activity
+            android:name=".RegistroActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
+        <activity
+            android:name=".PerfilUsuarioActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity
             android:name=".AboutActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar" />

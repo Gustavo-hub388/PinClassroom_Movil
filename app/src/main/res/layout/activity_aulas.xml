@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/colorLightPrimary"
     tools:context=".AulasActivity">
 
     <TabHost
@@ -28,6 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+
                 <LinearLayout
                     android:id="@+id/tab_aula"
                     android:layout_width="match_parent"
@@ -38,28 +40,42 @@
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
                     android:paddingTop="16dp">
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/RecyclerAulas"
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/actionBarSize"
+                            app:popupTheme="@style/AppTheme.PopupOverlay"/>
+                    </ScrollView>
 
-                    <TextView
+                    <!--<TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="AULAS"
                         android:textSize="40dp"
-                        android:gravity="center"/>
+                        android:gravity="center"/>-->
 
                 </LinearLayout>
+
 
                 <LinearLayout
                     android:id="@+id/tab_mapa"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                    <TextView
+                    </ScrollView>
+                    <!--<TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="MAPA"
                         android:textSize="40dp"
-                        android:gravity="center"/>
+                        android:gravity="center"/>-->
                 </LinearLayout>
             </FrameLayout>
         </LinearLayout>

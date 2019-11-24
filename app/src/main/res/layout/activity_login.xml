@@ -5,141 +5,68 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorLightPrimary"
     android:orientation="vertical"
     android:padding="12dp"
-    android:paddingBottom="16dp"
     android:paddingLeft="16dp"
-    android:paddingRight="16dp"
     android:paddingTop="16dp"
-    android:background="@color/colorLightPrimary"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
     tools:context=".LoginActivity">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="580dp"
-                android:layout_alignParentEnd="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginEnd="2dp"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="2dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginEnd="2dp"
                 app:cardBackgroundColor="#FFFFFF"
                 app:cardCornerRadius="10dp"
                 app:cardUseCompatPadding="true">
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-    />
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    />
 
                     <ImageView
                         android:id="@+id/logo_pin"
-                        android:layout_width="110dp"
-                        android:layout_height="130dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginEnd="105dp"
-                        android:layout_marginLeft="120dp"
-                        android:layout_marginStart="105dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_width="130sp"
+                        android:layout_height="130sp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="30dp"
                         app:srcCompat="@drawable/pinclassroom_logo"></ImageView>
 
                     <ImageView
                         android:id="@+id/logotipo_pin"
                         android:layout_width="300dp"
                         android:layout_height="50dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentStart="true"
-                        android:layout_below="@+id/logo_pin"
-                        android:layout_marginEnd="75dp"
-                        android:layout_marginLeft="50dp"
-                        android:layout_marginStart="75dp"
-                        android:layout_marginTop="1dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
                         app:srcCompat="@drawable/pinclassroom"></ImageView>
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/btnIniciarSesion"
-                        android:layout_marginTop="10dp">
-
-                        <TextView
-                            android:id="@+id/BtnRegistrarse"
-                            android:layout_width="100dp"
-                            android:layout_height="40dp"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginEnd="40dp"
-                            android:layout_marginRight="10dp"
-                            android:layout_marginTop="24dp"
-                            android:background="#00FFFFFF"
-                            android:onClick="IrRegistro"
-                            android:text="Registrarse"
-                            android:textAlignment="center"
-                            android:textColor="#FF0000"
-                            android:textSize="15dp" />
-
-                        <TextView
-                            android:id="@+id/textView2"
-                            android:layout_width="10dp"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginEnd="-5dp"
-                            android:layout_marginStart="1dp"
-                            android:layout_marginTop="27dp"
-                            android:layout_toStartOf="@+id/BtnRegistrarse"
-                            android:text="¿Aun no te has registrado?"
-                            android:textAlignment="textEnd"
-                            android:textSize="12dp" />
-
-                        <TextView
-                            android:id="@+id/txtTrans1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentBottom="true"
-                            android:layout_alignParentStart="true"
-                            android:layout_below="@id/BtnRegistrarse"
-                            android:layout_marginStart="0dp"
-                            android:layout_marginTop="1dp" />
-                    </RelativeLayout>
-
-
-                    <TextView
-                        android:id="@+id/btn_olvido_password"
-                        android:layout_width="match_parent"
-                        android:layout_height="20dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentStart="true"
-                        android:layout_below="@+id/logotipo_pin"
-                        android:layout_marginEnd="25dp"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="181dp"
-                        android:background="#00FFFFFF"
-                        android:onClick="IrRecupPass"
-                        android:text="¿Olvidó su contraseña?"
-                        android:textAlignment="textEnd"
-                        android:textSize="15dp" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/logotipo_pin"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentEnd="true"
+                        android:layout_gravity="center_horizontal"
                         android:layout_marginStart="25dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="30dp"
                         android:layout_marginEnd="25dp"
                         app:boxStrokeColor="#FF0000"
                         app:hintTextAppearance="@style/Hint">
@@ -156,14 +83,11 @@
 
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="350dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/logotipo_pin"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="center_horizontal"
                         android:layout_marginStart="25dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="100dp"
+                        android:layout_marginTop="10dp"
                         android:layout_marginEnd="25dp"
                         app:boxStrokeColor="#FF0000"
                         app:hintTextAppearance="@style/Hint">
@@ -178,17 +102,28 @@
                             android:paddingTop="15dp" />
                     </com.google.android.material.textfield.TextInputLayout>
 
+                    <TextView
+                        android:id="@+id/btn_olvido_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="25dp"
+                        android:background="#00FFFFFF"
+                        android:onClick="IrRecupPass"
+                        android:text="¿Olvidó su contraseña?"
+                        android:textAlignment="textEnd"
+                        android:textSize="15dp" />
+
+
                     <mehdi.sakout.fancybuttons.FancyButton
                         android:id="@+id/btnIniciarSesion"
                         android:layout_width="200dp"
                         android:layout_height="48dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentStart="true"
-                        android:layout_below="@+id/btn_olvido_password"
-                        android:layout_marginEnd="80dp"
-                        android:layout_marginLeft="40dp"
+                        android:layout_gravity="center_horizontal"
                         android:layout_marginStart="80dp"
                         android:layout_marginTop="30dp"
+                        android:layout_marginEnd="80dp"
                         android:text="Iniciar Sesión"
                         android:textColor="#FFFFFF"
                         android:textSize="20dp"
@@ -197,9 +132,47 @@
                         fancy:fb_defaultColor="#E72121"
                         fancy:fb_focusColor="#E90000"
                         fancy:fb_radius="10dp" />
-                </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20sp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="¿Aun no te has registrado?"
+                            android:textAlignment="center"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/BtnRegistrarse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="5dp"
+                            android:background="#00FFFFFF"
+                            android:onClick="IrRegistro"
+                            android:text="Registrarse"
+                            android:textAlignment="center"
+                            android:textColor="#FF0000"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp" />
+
+                </LinearLayout>
+
             </androidx.cardview.widget.CardView>
-        </RelativeLayout>
+        </LinearLayout>
     </ScrollView>
 
 </RelativeLayout>

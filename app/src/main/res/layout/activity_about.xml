@@ -68,17 +68,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:text="  Made with        in Usulutan"
+                    android:text="Made with       to you"
                     android:textAlignment="center"
                     android:textColor="@color/colorText_Icon"
                     android:textSize="20dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:gravity="center_horizontal"/>
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:layout_marginTop="15dp"
-                    android:src="@drawable/heart_white" />
+                    android:layout_marginStart="40sp"
+                    android:src="@drawable/heart_white"/>
             </RelativeLayout>
 
         </LinearLayout>
@@ -111,7 +113,7 @@ dentro de la Universidad Gerardo Barrios Regional de Usulután campus como tambi
 que imparten clases y conocer que asignaturas imparten, PinClassroom hace mas facil la vida a los estudiantes."
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimaryText"
-                android:textSize="20dp"
+                android:textSize="15sp"
                 android:textStyle="italic" />
 
             <TextView
@@ -119,6 +121,30 @@ que imparten clases y conocer que asignaturas imparten, PinClassroom hace mas fa
                 android:layout_height="wrap_content"
                 android:text=""
                 android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="45dp"
+                android:layout_marginEnd="45dp"
+                android:text="Entra y conoce tambien nuestra página web de PinClassroom:"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="15sp"
+                android:textStyle="italic" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="45dp"
+                android:layout_marginEnd="45dp"
+                android:text="https://pinclassroom-93711.firebaseapp.com/"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:layout_marginTop="15dp"
+                android:textColorLink="#03A9F4"
+                android:onClick="IrWebPinClassrooom"/>
 
             <TextView
                 android:layout_width="match_parent"

@@ -1,12 +1,12 @@
 package com.example.pinclassroom;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import java.util.Properties;
+import java.util.logging.Logger;
 
 import javax.mail.Authenticator;
 import javax.mail.Message;
@@ -20,21 +20,15 @@ import javax.mail.internet.MimeMessage;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.common.data.DataBufferRef;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.StorageReference;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 
@@ -49,7 +43,8 @@ public class AyudaMejorarActivity extends AppCompatActivity implements OnClickLi
 
     private FirebaseAuth mAuth;
     private FirebaseUser user;
-    private DatabaseReference mdatabaseReference;
+    private DatabaseReference mDatabase;
+    private StorageReference mStorage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +69,7 @@ public class AyudaMejorarActivity extends AppCompatActivity implements OnClickLi
     public void onClick(View v) {
 
         rec = "pinclassroom.2019@gmail.com";
-        subject = user.getEmail();
+        subject = user.getEmail()+ ", ";
         textMessage = msg.getText().toString();
 
         // elimina los espacios en blanco usando el método trim()
@@ -89,6 +84,7 @@ public class AyudaMejorarActivity extends AppCompatActivity implements OnClickLi
             props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
             props.put("mail.smtp.auth", "true");
             props.put("mail.smtp.port", "465");
+            props.put("mail.smtp.ssl.checkserveridentity", true);
 
             session = Session.getDefaultInstance(props, new Authenticator() {
                 protected PasswordAuthentication getPasswordAuthentication() {
@@ -119,9 +115,9 @@ public class AyudaMejorarActivity extends AppCompatActivity implements OnClickLi
                 message.setContent(textMessage, "text/html; charset=utf-8");
                 Transport.send(message);
             } catch (MessagingException e) {
-                e.printStackTrace();
+                Logger.getLogger("context" + e);
             } catch (Exception e) {
-                e.printStackTrace();
+                Logger.getLogger("context" + e);
             }
             return null;
         }

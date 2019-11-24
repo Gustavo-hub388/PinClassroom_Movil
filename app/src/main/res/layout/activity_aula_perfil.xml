@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:fancy="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorLightPrimary"
     android:orientation="vertical"
-    tools:context=".PerfilUsuarioActivity">
+    tools:context=".Aulas.AulaPerfilActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/action_bar_activity_content"
@@ -38,7 +37,7 @@
                     android:id="@+id/atras_config"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:onClick="IrConfigPeril"
+                    android:onClick="IrListaAulas"
                     android:src="@drawable/ic_arrow_back_black_48dp" />
             </LinearLayout>
 
@@ -105,7 +104,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_margin="3dp"
-                                android:text="Foto de perfil"
+                                android:text="Foto del aula"
                                 android:textAlignment="center" />
 
                             <TextView
@@ -115,7 +114,7 @@
                                 android:textAlignment="center"
                                 android:textSize="1dp" />
 
-                            <de.hdodenhof.circleimageview.CircleImageView
+                            <ImageView
                                 android:id="@+id/fotoPefil"
                                 android:layout_width="180dp"
                                 android:layout_height="180dp"
@@ -123,22 +122,10 @@
                                 android:layout_margin="10dp"
                                 android:padding="10dp"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/ic_perfil"
-                                app:civ_border_width="2dp"
-                                app:civ_border_color="#99000000"
+                                android:src="@drawable/ic_domain_black_48dp"
                                 android:layout_centerVertical="true"
                                 android:layout_centerHorizontal="true"/>
 
-                            <ImageView
-                                android:id="@+id/fotoEdit"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:layout_gravity="end"
-                                android:layout_marginTop="-40dp"
-                                android:layout_marginEnd="20dp"
-                                android:longClickable="true"
-                                android:onClick="nombreEdit"
-                                android:src="@drawable/ic_edit" />
 
                             <!--<ProgressBar
                                 android:id="@+id/progress_upload_photo"
@@ -170,7 +157,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_margin="3dp"
-                                android:text="Tu información"
+                                android:text="Información del aula"
                                 android:textAlignment="center" />
 
                             <TextView
@@ -184,7 +171,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_margin="3dp"
-                                android:text="Tu nombre:" />
+                                android:text="Nombre del Aula:" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -193,44 +180,26 @@
                                 android:orientation="horizontal">
 
                                 <EditText
-                                    android:id="@+id/nombrePerfil"
+                                    android:id="@+id/nomProfileAula"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="20dp"
                                     android:layout_marginEnd="23dp"
                                     android:enabled="false"
                                     android:focusableInTouchMode="false"
-                                    android:hint="Ingrese su nombre completo"
+                                    android:hint="(Nombre del Aula)"
                                     android:inputType="textPersonName"
                                     android:textAlignment="textStart"
                                     android:textColor="@color/colorPrimaryText"
                                     android:textSize="12sp" />
 
-                                <ImageView
-                                    android:id="@+id/nombreEdit"
-                                    android:layout_width="20dp"
-                                    android:layout_height="20dp"
-                                    android:layout_gravity="center"
-                                    android:layout_marginStart="-23dp"
-                                    android:onClick="nombreEdit"
-                                    android:src="@drawable/ic_edit" />
-
-                                <ImageView
-                                    android:id="@+id/nombreSave"
-                                    android:layout_width="20dp"
-                                    android:layout_height="20dp"
-                                    android:layout_gravity="center"
-                                    android:layout_marginStart="-20dp"
-                                    android:onClick="nombreSave"
-                                    android:src="@drawable/ic_save"
-                                    android:visibility="invisible" />
                             </LinearLayout>
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_margin="3dp"
-                                android:text="Fecha naciemiento:" />
+                                android:text="Edificio del Aula:" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -240,44 +209,26 @@
                                 android:orientation="horizontal">
 
                                 <EditText
-                                    android:id="@+id/fechaPerfil"
+                                    android:id="@+id/edifProfileAula"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="20dp"
                                     android:layout_marginEnd="23dp"
                                     android:enabled="false"
                                     android:focusableInTouchMode="false"
-                                    android:hint="Ingrese su fecha de nacimiento"
+                                    android:hint="(Edificio al que pertenerce)"
                                     android:inputType="date"
                                     android:textAlignment="textStart"
                                     android:textColor="@color/colorPrimaryText"
                                     android:textSize="12sp" />
 
-                                <ImageView
-                                    android:id="@+id/fechaEdit"
-                                    android:layout_width="20dp"
-                                    android:layout_height="20dp"
-                                    android:layout_gravity="center"
-                                    android:layout_marginStart="-23dp"
-                                    android:onClick="fechaEdit"
-                                    android:src="@drawable/ic_edit" />
-
-                                <ImageView
-                                    android:id="@+id/fechaSave"
-                                    android:layout_width="20dp"
-                                    android:layout_height="20dp"
-                                    android:layout_gravity="center"
-                                    android:layout_marginStart="-20dp"
-                                    android:onClick="fechaSave"
-                                    android:src="@drawable/ic_save"
-                                    android:visibility="invisible" />
                             </LinearLayout>
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_margin="3dp"
-                                android:text="Sexo:" />
+                                android:text="Planta del Aula:" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -286,14 +237,14 @@
                                 android:orientation="horizontal">
 
                                 <EditText
-                                    android:id="@+id/sexoPerfil"
+                                    android:id="@+id/plantProfileAula"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="20dp"
                                     android:layout_marginEnd="23dp"
                                     android:enabled="false"
                                     android:focusableInTouchMode="false"
-                                    android:hint="Ingrese su sexo: Masculino ó Femenino"
+                                    android:hint="(Nivel del edificio)"
                                     android:inputType="date"
                                     android:textAlignment="textStart"
                                     android:textColor="@color/colorPrimaryText"
@@ -304,7 +255,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_margin="3dp"
-                                android:text="Correo:" />
+                                android:text="Capacidad del Aula:" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -313,13 +264,14 @@
                                 android:orientation="horizontal">
 
                                 <EditText
-                                    android:id="@+id/correoPerfil"
+                                    android:id="@+id/cantProfileAula"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="23dp"
                                     android:enabled="false"
                                     android:focusableInTouchMode="false"
-                                    android:hint="pinclassroom@ugb.edu.sv"
+                                    android:hint="(Cantidad de estudiantes)"
                                     android:textAlignment="textStart"
                                     android:textColor="@color/colorPrimaryText"
                                     android:textSize="12sp" />
@@ -344,7 +296,7 @@
                         app:cardCornerRadius="@dimen/cardview_compat_inset_shadow">
 
 
-                        <LinearLayout
+                        <!--<LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
@@ -430,7 +382,7 @@
                                 android:text="Cambiar"
                                 android:textSize="12sp" />
 
-                        </LinearLayout>
+                        </LinearLayout>-->
 
                     </androidx.cardview.widget.CardView>
 

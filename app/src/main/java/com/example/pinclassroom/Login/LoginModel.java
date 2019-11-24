@@ -28,18 +28,23 @@ public class LoginModel implements LoginInterface.Model {
         mAuth.signInWithEmailAndPassword(emailLogin, passwordLogin).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
-                    if (!user.isEmailVerified()) {
-                        listener.onError("El correo " + user.getEmail() + " aun no se a verificado.");
+                try {
+                    if (task.isSuccessful()){
+                        if (!user.isEmailVerified()) {
+                            listener.onError("El correo " + user.getEmail() + " aun no se a verificado.");
+                        } else {
+                            listener.onSucess();
+                        }
                     } else {
-                        listener.onSucess();
+                        if (task.getException().getMessage()!=null)
+                            listener.onError(task.getException().getMessage());
+
+
                     }
-                } else {
-                    if (task.getException().getMessage()!=null)
-                        listener.onError(task.getException().getMessage());
-
-
+                } catch (Exception err){
+                    listener.onError("Error de autenticación, revise que la conexión a internet sea buena y vuelva a intentarlo");
                 }
+
             }
         });
     }

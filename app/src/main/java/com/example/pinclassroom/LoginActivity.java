@@ -14,8 +14,6 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.example.pinclassroom.Login.LoginInterface;
 import com.example.pinclassroom.Login.LoginPresenter;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 
@@ -30,13 +28,18 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        setViews();
-        btnIniciarSesion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                handleLogin();
-            }
-        });
+        try {
+            setViews();
+            btnIniciarSesion.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    handleLogin();
+                }
+            });
+        } catch (Exception err){
+            Toast.makeText(getApplicationContext(), "error: " + err , Toast.LENGTH_LONG).show();
+        }
+
     }
 
     private void setViews() {
@@ -57,11 +60,11 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
     }
 
     public void IrRegistro(View view){
-
-        Toast.makeText(this, "Te redireccionaremos a nuestra página web para que te registres",Toast.LENGTH_SHORT).show();
+        //startActivity(new Intent(this, RegistroActivity.class));
+        Toast.makeText(this, "Te redireccionaremos a nuestra página web para que te registres",Toast.LENGTH_LONG).show();
 
         //Redireccionar a la página web de PinClassroom
-        Uri uri = Uri.parse("https://pinclassroom-93711.web.app");
+       Uri uri = Uri.parse("https://pinclassroom-93711.firebaseapp.com/");
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
 
@@ -129,7 +132,7 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
 
     @Override
     public void onError(String error) {
-        Toast.makeText(this, error,Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, error,Toast.LENGTH_LONG).show();
         hideProgress();
         enableInputs();
     }

@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class PrincipalActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -27,7 +26,7 @@ public class PrincipalActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
 
-
+        try {
 
         builder = new AlertDialog.Builder(this);
         builder.setTitle("¿Quieres cerrar sesión?");
@@ -63,6 +62,12 @@ public class PrincipalActivity extends AppCompatActivity implements View.OnClick
         cardDocentes.setOnClickListener(this);
         cardEventos.setOnClickListener(this);
         cardConfiguraciones.setOnClickListener(this);
+
+        } catch (Exception err) {
+            Toast.makeText(getApplicationContext(), "Error: " + err, Toast.LENGTH_SHORT).show();
+        }
+
+
     }
 
 

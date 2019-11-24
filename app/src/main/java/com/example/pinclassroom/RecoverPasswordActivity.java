@@ -26,7 +26,11 @@ public class RecoverPasswordActivity extends AppCompatActivity implements RecupP
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recover_password);
-        setViews();
+        try {
+            setViews();
+        } catch (Exception err){
+            Toast.makeText(getApplicationContext(), "error: " + err , Toast.LENGTH_LONG).show();
+        }
     }
 
     private void setViews() {

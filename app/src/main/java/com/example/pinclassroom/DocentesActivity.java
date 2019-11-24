@@ -9,9 +9,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TabHost;
 
-import com.example.pinclassroom.Objetos.Adapater;
-import com.example.pinclassroom.Objetos.Docentes;
-import com.example.pinclassroom.Objetos.FirebaseReferences;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

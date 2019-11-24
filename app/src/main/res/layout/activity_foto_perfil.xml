@@ -53,7 +53,7 @@
                     android:id="@+id/textTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Mi Perfil"
+                    android:text="Foto Perfil"
                     android:textColor="@color/colorPrimaryText"
                     android:textSize="20dp" />
             </LinearLayout>
@@ -117,14 +117,14 @@
 
                             <de.hdodenhof.circleimageview.CircleImageView
                                 android:id="@+id/fotoPefil"
-                                android:layout_width="180dp"
-                                android:layout_height="180dp"
+                                android:layout_width="200dp"
+                                android:layout_height="200dp"
                                 android:layout_gravity="center"
                                 android:layout_margin="10dp"
                                 android:padding="10dp"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/ic_perfil"
-                                app:civ_border_width="2dp"
+                                app:civ_border_width="1dp"
                                 app:civ_border_color="#99000000"
                                 android:layout_centerVertical="true"
                                 android:layout_centerHorizontal="true"/>
@@ -150,7 +150,7 @@
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
-                    <androidx.cardview.widget.CardView
+                    <!--<androidx.cardview.widget.CardView
                         style="@style/Widget.MaterialComponents.CardView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -432,7 +432,7 @@
 
                         </LinearLayout>
 
-                    </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>-->
 
                     <TextView
                         android:layout_width="match_parent"
