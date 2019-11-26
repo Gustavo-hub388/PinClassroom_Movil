@@ -52,7 +52,7 @@
                     android:id="@+id/textTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Perfil Aula"
+                    android:text="Perfil Docente"
                     android:textColor="@color/colorPrimaryText"
                     android:textSize="20dp" />
             </LinearLayout>
@@ -104,7 +104,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_margin="3dp"
-                                android:text="Foto del aula"
+                                android:text="Foto del docente"
                                 android:textAlignment="center" />
 
                             <TextView
@@ -115,14 +115,14 @@
                                 android:textSize="1dp" />
 
                             <ImageView
-                                android:id="@+id/fotoProfileAula"
+                                android:id="@+id/fotoProfileDocente"
                                 android:layout_width="180dp"
                                 android:layout_height="180dp"
                                 android:layout_gravity="center"
                                 android:layout_margin="10dp"
                                 android:padding="10dp"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/ic_domain_black_48dp"
+                                android:src="@drawable/ic_perfil"
                                 android:layout_centerVertical="true"
                                 android:layout_centerHorizontal="true"/>
 
@@ -157,7 +157,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_margin="3dp"
-                                android:text="Información del aula"
+                                android:text="Información del docente"
                                 android:textAlignment="center" />
 
                             <TextView
@@ -171,7 +171,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_margin="3dp"
-                                android:text="Nombre del Aula:" />
+                                android:text="Docente:" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -180,14 +180,14 @@
                                 android:orientation="horizontal">
 
                                 <EditText
-                                    android:id="@+id/nomProfileAula"
+                                    android:id="@+id/nomProfileDocente"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="20dp"
                                     android:layout_marginEnd="23dp"
                                     android:enabled="false"
                                     android:focusableInTouchMode="false"
-                                    android:hint="(Nombre del Aula)"
+                                    android:hint="(Nombre del Docente)"
                                     android:inputType="textPersonName"
                                     android:textAlignment="textStart"
                                     android:textColor="@color/colorPrimaryText"
@@ -199,7 +199,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_margin="3dp"
-                                android:text="Edificio del Aula:" />
+                                android:text="Facultad:" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -209,15 +209,15 @@
                                 android:orientation="horizontal">
 
                                 <EditText
-                                    android:id="@+id/edifProfileAula"
+                                    android:id="@+id/facultadProfileDocente"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="20dp"
                                     android:layout_marginEnd="23dp"
                                     android:enabled="false"
                                     android:focusableInTouchMode="false"
-                                    android:hint="(Edificio al que pertenerce)"
-                                    android:inputType="text"
+                                    android:hint="(Faculta a la que pertenece)"
+                                    android:inputType="textImeMultiLine"
                                     android:textAlignment="textStart"
                                     android:textColor="@color/colorPrimaryText"
                                     android:textSize="12sp" />
@@ -228,7 +228,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_margin="3dp"
-                                android:text="Planta del Aula:" />
+                                android:text="Formación académica:" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -237,15 +237,15 @@
                                 android:orientation="horizontal">
 
                                 <EditText
-                                    android:id="@+id/plantProfileAula"
+                                    android:id="@+id/forAcaProfileDocente"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="20dp"
                                     android:layout_marginEnd="23dp"
                                     android:enabled="false"
                                     android:focusableInTouchMode="false"
-                                    android:hint="(Nivel del edificio)"
-                                    android:inputType="text"
+                                    android:hint="(Títulos otorgados)"
+                                    android:inputType="date"
                                     android:textAlignment="textStart"
                                     android:textColor="@color/colorPrimaryText"
                                     android:textSize="12sp" />
@@ -255,7 +255,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_margin="3dp"
-                                android:text="Capacidad del Aula:" />
+                                android:text="Contactos:" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -264,14 +264,14 @@
                                 android:orientation="horizontal">
 
                                 <EditText
-                                    android:id="@+id/cantProfileAula"
+                                    android:id="@+id/contactosProfileDocente"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="20dp"
                                     android:layout_marginEnd="23dp"
                                     android:enabled="false"
                                     android:focusableInTouchMode="false"
-                                    android:hint="(Cantidad de estudiantes)"
+                                    android:hint="(Formas de comunicarse con el docente)"
                                     android:textAlignment="textStart"
                                     android:textColor="@color/colorPrimaryText"
                                     android:textSize="12sp" />

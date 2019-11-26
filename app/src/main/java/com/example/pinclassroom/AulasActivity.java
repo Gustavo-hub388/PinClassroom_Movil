@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -16,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.pinclassroom.Aulas.AulaObjetos;
 import com.example.pinclassroom.Aulas.AulaPerfilActivity;
@@ -41,6 +44,7 @@ public class AulasActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseUser user;
     private DatabaseReference mDatabase;
+    private ProgressDialog mProgress;
 
     private RecyclerView mAulasRecycler;
     private FirebaseRecyclerAdapter<AulaObjetos, AulasViewHolder> mAulasAdapter;
@@ -52,6 +56,11 @@ public class AulasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aulas);
+
+        mProgress = new ProgressDialog(this);
+        mProgress.setMessage("Espero un momento...");
+        mProgress.setCancelable(false);
+        mProgress.show();
 
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
@@ -94,27 +103,36 @@ public class AulasActivity extends AppCompatActivity {
                 mDatabase.child(AulasID).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.exists()){
-                            final String retName = dataSnapshot.child("name").getValue().toString();
-                            final String retEdificio = dataSnapshot.child("edificio").getValue().toString();
-                            final String retPlanta = dataSnapshot.child("planta").getValue().toString();
-                            final String retCapacidad = dataSnapshot.child("capacidad").getValue().toString();
 
-                            holder.setName(model.getName());
-                            holder.setEdificio(model.getEdificio());
-                            holder.itemView.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
+                        try {
+                            if (dataSnapshot.exists()){
+                                final String retName = dataSnapshot.child("name").getValue().toString();
+                                final String retEdificio = dataSnapshot.child("edificio").getValue().toString();
+                                final String retPlanta = dataSnapshot.child("planta").getValue().toString();
+                                final String retCapacidad = dataSnapshot.child("capacidad").getValue().toString();
+                                //final String retImage = dataSnapshot.child("images").child("0").getValue().toString();
 
-                                    Intent intentAulaPerfil = new Intent(getApplicationContext(), AulaPerfilActivity.class);
-                                    intentAulaPerfil.putExtra("vistaAulaID", AulasID);
-                                    intentAulaPerfil.putExtra("vistaAulaNombre", retName);
-                                    intentAulaPerfil.putExtra("vistaAulaEdificio", retEdificio);
-                                    intentAulaPerfil.putExtra("vistaAulaPlanta", retPlanta);
-                                    intentAulaPerfil.putExtra("vistaAulaCapacidad", retCapacidad);
-                                    startActivity(intentAulaPerfil);
-                                }
-                            });
+                                holder.setName(model.getName());
+                                holder.setEdificio(model.getEdificio());
+                                //holder.setImage(getBaseContext(), model.getImage());
+                                mProgress.dismiss();
+                                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+
+                                        Intent intentAulaPerfil = new Intent(getApplicationContext(), AulaPerfilActivity.class);
+                                        intentAulaPerfil.putExtra("vistaAulaID", AulasID);
+                                        intentAulaPerfil.putExtra("vistaAulaNombre", retName);
+                                        intentAulaPerfil.putExtra("vistaAulaEdificio", retEdificio);
+                                        intentAulaPerfil.putExtra("vistaAulaPlanta", retPlanta);
+                                        intentAulaPerfil.putExtra("vistaAulaCapacidad", retCapacidad);
+                                        //intentAulaPerfil.putExtra("vistaAulaFoto", retImage);
+                                        startActivity(intentAulaPerfil);
+                                    }
+                                });
+                            }
+                        } catch (Exception e) {
+                            Toast.makeText(AulasActivity.this,"Error: "+e,Toast.LENGTH_LONG).show();
                         }
                     }
 
@@ -170,6 +188,10 @@ public class AulasActivity extends AppCompatActivity {
             TextView edificio_aula = (TextView) mView.findViewById(R.id.edificio_aula);
             edificio_aula.setText(edificio);
         }
+        /*public void setImage(Context ctx, String images){
+            ImageView post_image = (ImageView) mView.findViewById(R.id.foto_aula);
+            Picasso.with(ctx).load(images).into(post_image);
+        }*/
     }
 }
 

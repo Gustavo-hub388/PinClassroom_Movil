@@ -92,6 +92,11 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
             mDatabase = FirebaseDatabase.getInstance().getReference();
             mStorage = FirebaseStorage.getInstance().getReference();
 
+            mProgress = new ProgressDialog(this);
+            mProgress.setMessage("Espero un momento...");
+            mProgress.setCancelable(false);
+            mProgress.show();
+
 
             //TextViews
             nombrePerfil = findViewById(R.id.nombrePerfil);
@@ -156,6 +161,7 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "No a seleccionado su carrera en esos momentos, si desea selccionarla dirijase a nuestra pagina web.", Toast.LENGTH_LONG).show();
                         }*/
                         correoPerfil.setText(user.getEmail());
+                        mProgress.dismiss();
                     }
                 }
 
@@ -193,7 +199,8 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
             txtPasswordNew.setError("Ingrese la contraseña nueva");
         } else {
             mProgress = new ProgressDialog(this);
-            mProgress.setTitle("Cambiando contraseña...");
+            mProgress.setMessage("Cambiando contraseña...");
+            mProgress.setCancelable(false);
             mProgress.show();
             final FirebaseUser usuario = FirebaseAuth.getInstance().getCurrentUser();
             AuthCredential credential = EmailAuthProvider.getCredential(Correo, txtPasswordOld.getText().toString());

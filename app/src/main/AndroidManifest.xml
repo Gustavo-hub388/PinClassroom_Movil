@@ -17,7 +17,9 @@
         android:theme="@style/AppTheme"
         tools:ignore="HardcodedDebugMode"
         tools:replace="allowBackup">
-        <activity android:name=".Aulas.AulaPerfilActivity"></activity>
+        <activity android:name=".Docentes.DocentePerfilActivity"></activity>
+        <activity android:name=".Aulas.AulaGaleria" />
+        <activity android:name=".Aulas.AulaPerfilActivity" />
         <activity
             android:name=".Aulas.AulasWebView"
             android:label="@string/title_activity_aulas_web_view"

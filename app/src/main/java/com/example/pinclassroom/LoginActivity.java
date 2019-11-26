@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
         txtPasswordLogin = findViewById(R.id.txtPasswordLogin);
         btnIniciarSesion = findViewById(R.id.btnIniciarSesion);
         MaterialDialog.Builder builder = new MaterialDialog.Builder(this)
-                .title("Cargando")
+                .title("Iniciando sesion")
                 .content("Espere por favor...")
                 .cancelable(false)
                 .progress(true,0);

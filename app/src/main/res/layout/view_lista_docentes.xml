@@ -1,13 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:clickable="true"
-    android:background="?attr/selectableItemBackground">
+    app:cardCornerRadius="0dp"
+    android:layout_margin="7dp"
+    android:elevation="90dp">
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_margin="10dp"
+            android:id="@+id/foto_aula"
+            android:src="@drawable/ic_perfil"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nombre_docente"
+                android:text="(NOMBRE DEL DOCENTE)"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:textSize="20sp"
+                android:textColor="#000000"/>
+
+            <TextView
+                android:id="@+id/facultad_docente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp"
+                android:text="(FACULTAD DEL DOCENTE)"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <!--<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -26,7 +72,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/txt_docente"
+                android:id="@+id/txt_nombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -36,7 +82,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txt_facultad"
+                android:id="@+id/txt_edificio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txt_nombre"
@@ -52,6 +98,5 @@
         android:layout_height="3dp"
         android:layout_below="@id/img_aula"
         android:layout_marginTop="11dp"
-        android:background="@color/colorPrimaryDark" />
-
-</LinearLayout>
+        android:background="@color/colorPrimaryDark" />-->
+</androidx.cardview.widget.CardView>
